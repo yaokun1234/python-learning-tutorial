@@ -300,6 +300,7 @@ for key, value in person.items():
     print(char)
 
 # 迭代字典
+```python
 person = {'name': '张三', 'age': 25, 'city': '北京'}
 for key in person:
     print(f"{key}: {person[key]}")
