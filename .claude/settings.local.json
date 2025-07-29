@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "WebFetch(domain:liaoxuefeng.com)",
+      "Bash(mkdir:*)",
+      "Bash(for dir in */)",
+      "Bash(do mkdir -p \"$dir\"/{notes,examples})",
+      "Bash(done)"
+    ],
+    "deny": []
+  }
+}
