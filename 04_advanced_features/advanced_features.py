@@ -1,23 +1,32 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from collections.abc import Iterable
+# Python - 基本语法：[表达式 for 变量 in 可迭代对象]
+# Python - 条件语法：[表达式 for 变量 in 可迭代对象 if 条件]
 
-# 检查对象是否可迭代
-def is_iterable(obj):
-    return isinstance(obj, Iterable)
+# ===== 列表生成式 =====
+# print("=== 列表生成式 ===")
+#
+# a = [x ** 2 for x in range(1, 11) ]
+# print(a)
+#
+# b = [x ** 2 for x in range(1, 11) if x % 2 == 0]
+# print(b)
+#
+# # 字符串处理（比Java Stream简洁）
+# words = ['hello', 'world', 'python', 'programming']
+# A = [ word.upper() for word in words ]
+# print(A)
 
-# 测试不同类型
-test_objects = [
-    [1, 2, 3],           # 列表
-    (1, 2, 3),           # 元组
-    'hello',             # 字符串
-    {'a': 1},            # 字典
-    {1, 2, 3},           # 集合
-    range(5),            # range对象
-    123,                 # 整数
-    3.14                 # 浮点数
-]
 
-for obj in test_objects:
-    print(f"{obj} 是否可迭代: {is_iterable(obj)}")
+# original = [[1, 2, 3], [4, 5, 6]]
+# for a,b in zip(*original):
+#     print(a,b)
+
+# # 使用zip转置（更简洁）
+# transposed_zip = [list(col) for col in zip(*original)]
+# print(transposed_zip)       # [[1, 4], [2, 5], [3, 6]]
+
+multiplication_table = [f"{i} x {j} = {i*j}" for i in range(1, 4) for j in range(1, 4)]
+for item in multiplication_table:
+    print(item)

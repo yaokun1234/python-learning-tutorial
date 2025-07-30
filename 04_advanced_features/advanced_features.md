@@ -556,11 +556,6 @@ print(results)              # [1, 3, 5, 7, 9]
 even_numbers = [x for x in range(20) if x % 2 == 0]
 print(even_numbers)         # [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 
-# 过滤字符串长度
-words = ['apple', 'banana', 'cherry', 'date', 'elderberry']
-long_words = [word for word in words if len(word) > 5]
-print(long_words)           # ['banana', 'cherry', 'elderberry']
-
 # 多重条件
 numbers = range(1, 21)
 filtered = [x for x in numbers if x % 2 == 0 and x % 3 == 0]
@@ -815,18 +810,21 @@ for i, value in enumerate(gen_exp):
 **关键理解**：
 - **Java的问题**：传统方式必须预先计算所有值；Stream API有限制且语法复杂
 - **Python的优势**：语法简单，真正的延迟计算，可重复使用（通过重新创建）
+```python
 list_comp = [x**2 for x in range(1000000)]    # 占用大量内存
 gen_exp = (x**2 for x in range(1000000))      # 几乎不占内存
 
 print(type(list_comp))      # <class 'list'>
 print(type(gen_exp))        # <class 'generator'>
-
-# 内存占用对比
+```
+### 内存占用对比
+```python
 import sys
 print(f"列表占用内存: {sys.getsizeof(list_comp)} bytes")
 print(f"生成器占用内存: {sys.getsizeof(gen_exp)} bytes")
-
-# 使用生成器
+```
+## 使用生成器
+```python
 for i, value in enumerate(gen_exp):
     if i >= 10:  # 只打印前10个值
         break
